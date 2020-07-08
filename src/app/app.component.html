@@ -1,0 +1,20 @@
+<!--<header>-->
+<!--  <p routerLink="/autocomplete">Autocomplete</p>-->
+<!--  <p routerLink="/get-info">Get Info</p>-->
+<!--  <p routerLink="/photos">Photos</p>-->
+<!--</header>-->
+<div class="spinner" *ngIf="this.placesService.spinnerTimer$ && this.placesService.spinnerData$ | async">
+  <mat-progress-spinner
+    class="example-margin"
+    color="primary"
+    mode="indeterminate"
+    value='25'>
+  </mat-progress-spinner>
+</div>
+<div class="wrapper">
+  <div class="main-buttons">
+    <button mat-raised-button (click)="openLoginDialog()">Login</button>
+    <button mat-raised-button>Logout</button>
+  </div>
+</div>
+<router-outlet></router-outlet>

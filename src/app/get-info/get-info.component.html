@@ -1,0 +1,25 @@
+<div class="getInfo">
+  <div class="getInfo-button">
+    <button (click)="onGetInfo()" mat-raised-button>GET INFO</button>
+  </div>
+  <div class="getInfo-data" *ngIf="cityData !== undefined">
+    <div class="getInfo-data__body">
+      <p class="city-name">{{ cityData.country.ru }}</p>
+      <div class="info">
+        <div class="city-info">
+          <p>Код страны: {{ cityData.country_code.toUpperCase()}}</p>
+        </div>
+        <div class="city-info">
+          <p>Население: {{ cityData.population}} жителей</p>
+        </div>
+        <div class="city-info">
+          <p>Область: {{ cityData.administrative}}</p>
+        </div>
+        <div class="city-info">
+          <p>Широта: {{ cityData._geoloc.lat}}</p>
+          <p>Долгота: {{ cityData._geoloc.lng}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

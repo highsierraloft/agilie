@@ -1,0 +1,15 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Ex. root">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Ex. password">
+  </mat-form-field>
+  <div mat-dialog-actions class="confirm-buttons">
+    <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+    <button mat-raised-button>Ok</button>
+  </div>
+</form>

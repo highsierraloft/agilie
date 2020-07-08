@@ -1,0 +1,32 @@
+.autocompleteBody {
+  max-width: 500px;
+  margin: 0 auto;
+  &-input {
+    display: flex;
+    justify-content: center;
+  }
+  &-options {
+    border: 1px solid #8b22a2;
+    border-radius: 5px;
+    max-height: 500px;
+    overflow: auto;
+    &__option {
+      margin: 20px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      &:hover {
+        background-color: #cab3cf;
+        color: #ffffff;
+        cursor: pointer;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  &-submit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}

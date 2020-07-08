@@ -1,0 +1,41 @@
+.getInfo {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+
+  &-button {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      max-height: 50px;
+      width: 80%;
+    }
+  }
+
+  &-data {
+    flex: 0 0 50%;
+
+    &__body {
+      border: 1px solid #8b22a2;
+      border-radius: 5px;
+      max-height: 500px;
+      padding: 10px 0 0 10px;
+      overflow: hidden;
+
+      .city-name {
+        font-weight: 600;
+      }
+
+      .info {
+        overflow: auto;
+        max-height: 100%;
+      }
+
+      .city-info {
+
+      }
+    }
+  }
+}
