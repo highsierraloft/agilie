@@ -1,16 +1,15 @@
-
 <div class="autocompleteBody">
-  <div class="autocompleteBody-input">
-    <mat-form-field>
-      <input matInput type="text" [(ngModel)]="inputValue" (ngModelChange)="getPlaces()" placeholder="Type here">
-    </mat-form-field>
-  </div>
-  <div *ngIf="places !== [] && places.length > 2" class="autocompleteBody-options">
-    <div *ngFor="let place of places; let i = index" class="autocompleteBody-options__option">
-      <p (click)="selectCity(i)">{{place.country.ru }}, {{ place.locale_names.default }}</p>
+    <div class="autocompleteBody-input">
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="inputValue" (ngModelChange)="getPlaces()" placeholder="Type here">
+        </mat-form-field>
     </div>
-  </div>
-  <div class="autocompleteBody-submit">
-    <button mat-raised-button (click)="onSubmitClick()">Submit</button>
-  </div>
+    <div *ngIf="sumPlaces.length && inputValue.length > 2" class="autocompleteBody-options">
+        <div *ngFor="let place of sumPlaces; let i = index" class="autocompleteBody-options__option">
+            <p (click)="selectCity(i)">{{place.country.ru }}, {{ place.locale_names.default }}</p>
+        </div>
+    </div>
+    <div class="autocompleteBody-submit">
+        <button mat-raised-button (click)="onSubmitClick()">Submit</button>
+    </div>
 </div>

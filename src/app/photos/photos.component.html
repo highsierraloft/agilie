@@ -1,3 +1,4 @@
+<button (click)="getPhotos()" mat-raised-button class="mat-focus-indicator mat-raised-button mat-button-base" style="margin-left: 20px;">Reload photo</button>
 <div class="photo-container">
   <mat-card *ngFor="let photo of photos$ | async" class="example-card">
     <mat-card-header>

@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, Observable, Subject} from "rxjs";
+import {BehaviorSubject, Observable, Subject, zip} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlacesService {
   cityId: number;
-  spinnerTimer$: Subject<boolean> = new BehaviorSubject(<boolean>(false));
-  spinnerData$: Subject<boolean> = new BehaviorSubject(<boolean>(false));
+  showSpinner$: Subject<boolean> = new BehaviorSubject(<boolean>(false));
+  isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(<boolean>(false));
+
 
   constructor(private http: HttpClient) {
   }
@@ -25,13 +26,4 @@ export class PlacesService {
     return this.http.get<any>('https://places-dsn.algolia.net/1/places/' + this.cityId);
   }
 
-  showSpinnerTimer() {
-    setTimeout(() => {
-      this.spinnerTimer$.next(false);
-    }, 300)
-  }
-
-  showSpinnerData() {
-    this.spinnerData$.next(false);
-  }
 }

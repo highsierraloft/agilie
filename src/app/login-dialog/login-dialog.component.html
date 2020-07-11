@@ -1,15 +1,15 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="form">
   <mat-form-field class="example-full-width">
     <mat-label>Username</mat-label>
-    <input matInput placeholder="Ex. root">
+    <input formControlName="login" matInput placeholder="Ex. root">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Password</mat-label>
-    <input type="password" matInput placeholder="Ex. password">
+    <input type="password" formControlName="password" matInput placeholder="Ex. password">
   </mat-form-field>
   <div mat-dialog-actions class="confirm-buttons">
     <button mat-raised-button (click)="onCancelClick()">Cancel</button>
-    <button mat-raised-button>Ok</button>
+    <button mat-raised-button (click)="onSubmitClick()">Ok</button>
   </div>
 </form>

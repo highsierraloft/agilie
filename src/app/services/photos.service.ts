@@ -11,6 +11,7 @@ export class PhotosService {
   }
 
   getPhotos(): Observable<any> {
-    return this.http.get<any>('http://jsonplaceholder.typicode.com/photos?_start=10&_limit=10');
+    const randPage = Math.floor(Math.random() * 101);
+    return this.http.get<any>('http://jsonplaceholder.typicode.com/photos?_start=' + randPage + '&_limit=10');
   }
 }
