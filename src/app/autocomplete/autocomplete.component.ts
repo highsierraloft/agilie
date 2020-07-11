@@ -1,18 +1,20 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {PlacesService} from "../services/places.service";
 import {Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
     selector: 'app-autocomplete',
     templateUrl: './autocomplete.component.html',
     styleUrls: ['./autocomplete.component.scss']
 })
-export class AutocompleteComponent {
+export class AutocompleteComponent implements OnDestroy {
     inputValue = '';
     places = [];
     placeId: any;
     lastPlaces = [];
     sumPlaces = [];
+    dataRequest: Subscription;
 
     constructor(
         private placesService: PlacesService,
@@ -22,7 +24,7 @@ export class AutocompleteComponent {
 
     getPlaces() {
         if (this.inputValue.length > 2) {
-            this.placesService.getPlaces(this.inputValue).subscribe(value => {
+            this.dataRequest = this.placesService.getPlaces(this.inputValue).subscribe(value => {
                 this.places = value.hits;
                 if (this.lastPlaces.length) {
                     this.sumPlaces = [];
@@ -51,5 +53,10 @@ export class AutocompleteComponent {
     onSubmitClick() {
         this.placesService.setCityId(this.placeId);
         this.router.navigateByUrl('/get-info')
+    }
+
+    ngOnDestroy() {
+        this.dataRequest.unsubscribe();
+        this.dataRequest = null;
     }
 }
