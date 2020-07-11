@@ -10,7 +10,7 @@ import {map} from "rxjs/operators";
 })
 export class GetInfoComponent {
 
-  cityData: object;
+  cityData: any;
 
   constructor(private placesService: PlacesService) {
   }

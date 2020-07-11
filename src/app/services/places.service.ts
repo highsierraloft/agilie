@@ -18,7 +18,7 @@ export class PlacesService {
     return this.http.post<any>('https://places-dsn.algolia.net/1/places/query', {query: searchData})
   }
 
-  getCityId(cityId) {
+  setCityId(cityId) {
     this.cityId = cityId;
   }
 

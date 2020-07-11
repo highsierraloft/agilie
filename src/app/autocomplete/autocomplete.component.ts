@@ -49,7 +49,7 @@ export class AutocompleteComponent {
     }
 
     onSubmitClick() {
-        this.placesService.getCityId(this.placeId);
+        this.placesService.setCityId(this.placeId);
         this.router.navigateByUrl('/get-info')
     }
 }
