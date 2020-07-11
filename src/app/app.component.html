@@ -1,9 +1,3 @@
-<!--<header>-->
-<!--  <p routerLink="/autocomplete">Autocomplete</p>-->
-<!--  <p routerLink="/get-info">Get Info</p>-->
-<!--  <p routerLink="/photos">Photos</p>-->
-<!--</header>-->
-<!--<div class="spinner" *ngIf="this.placesService.spinnerTimer$ && this.placesService.spinnerData$ | async">-->
 <div class="spinner" *ngIf="this.placesService.showSpinner$ | async">
   <mat-progress-spinner
     class="example-margin"

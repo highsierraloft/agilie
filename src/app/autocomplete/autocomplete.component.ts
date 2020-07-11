@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {PlacesService} from "../services/places.service";
 import {Router} from "@angular/router";
-import {element} from "protractor";
 
 @Component({
     selector: 'app-autocomplete',
